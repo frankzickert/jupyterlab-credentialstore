@@ -1,0 +1,170 @@
+
+.jp-CredentialsStore {
+    position:relative;
+    width:100%;
+    height:100%;
+    overflow-y: auto;
+}
+
+.jp-Frame {
+    width: 100%;
+    margin: 5px;
+}
+
+.jp-CredentialsTable {
+    width: 100%;
+    margin: 20px auto;
+    table-layout: auto;
+}
+
+.jp-PasswordTable {
+    width: 300px;
+    margin: 5px 5px;
+    table-layout: fixed;
+    position:absolute;
+    left:0;
+}
+
+.jp-Input {
+    width: 100%;
+    
+}
+
+.jp-Button {
+    width: 60px;
+    margin: 0px 5px 0px 5px
+}
+
+.jp-Cell {
+    padding: 0px 5px 0px 5px
+}
+
+.jp-Column {
+    width: 70px;
+}
+
+
+.jp-StarColumn {
+    width: 5px;
+    text-align: right;
+}
+
+.jp-LimitedColumn {
+    max-width: 190px;
+}
+
+.loader {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#overlay {
+    position: absolute; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 60px; /* Full width (cover the whole page) */
+    height: 60px; /* Full height (cover the whole page) */
+    padding: 30px 65px;
+    border-radius: 25px;
+    top: 40px; 
+    left: 40px;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 0; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+.credential_store_logo {
+    background-image: url('vispy.png');
+}
+
+.jp-CredentialIcon {
+    background-image: url('icon_credential.png');
+}
+
+.jp-KeyIcon {
+    background-image: url('icon_key.png');
+}
+
+.react-resizable {
+  position: relative;
+}
+
+
+.react-resizable-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  right: 0;
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2IDYiIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiNmZmZmZmYwMCIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iNnB4Ij48ZyBvcGFjaXR5PSIwLjMwMiI+PHBhdGggZD0iTSA2IDYgTCAwIDYgTCAwIDQuMiBMIDQgNC4yIEwgNC4yIDQuMiBMIDQuMiAwIEwgNiAwIEwgNiA2IEwgNiA2IFoiIGZpbGw9IiMwMDAwMDAiLz48L2c+PC9zdmc+');
+  background-position: bottom right;
+  padding: 0 3px 3px 0;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  cursor: se-resize;
+}
+
+.react-grid-layout {
+  position: relative;
+  transition: height 200ms ease;
+}
+.react-grid-item {
+  transition: all 200ms ease;
+  transition-property: left, top;
+}
+.react-grid-item.cssTransforms {
+  transition-property: transform;
+}
+.react-grid-item.resizing {
+  z-index: 1;
+  will-change: width, height;
+}
+
+.react-grid-item.react-draggable-dragging {
+  transition: none;
+  z-index: 3;
+  will-change: transform;
+}
+
+.react-grid-item.react-grid-placeholder {
+  background: red;
+  opacity: 0.2;
+  transition-duration: 100ms;
+  z-index: 2;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.react-grid-item > .react-resizable-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  right: 0;
+  cursor: se-resize;
+}
+
+.react-grid-item > .react-resizable-handle::after {
+  content: "";
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  width: 5px;
+  height: 5px;
+  border-right: 2px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+}

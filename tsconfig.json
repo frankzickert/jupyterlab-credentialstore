@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "jsx": "react",
+    "allowJs": true,
+    "target": "es6",
+    "lib": ["ES6", "DOM"],
+    "experimentalDecorators": true,
+    "noUnusedLocals": false,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "outDir": "./lib",
+    "strict": true,
+    "strictNullChecks": false,
+    "types": []
+  },
+  "include": ["src/*"]
+}

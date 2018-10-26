@@ -1,0 +1,20 @@
+# Idea
+.idea/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# output-folders
+container/
+build/
+dist/
+node_modules/
+lib/
+
+# files from the mac
+.DS_Store
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.class
