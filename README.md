@@ -19,6 +19,8 @@ kc.get_credential("my_secret")
 ## Prerequisites
 
 * JupyterLab
+* NodeJs (`apt-get install nodejs -y`)
+* NPM (`apt-get install npm -y`)
 * PyCrypto (`pip install pycrypto`)
 
 ## Installation
@@ -26,6 +28,9 @@ kc.get_credential("my_secret")
 Install the **JupyterLab Credential Store**:
 
 ```bash
+pip install pycrypto
+apt-get install nodejs -y
+apt-get install npm -y
 jupyter labextension install @lean-data-science/jupyterlab_credentialstore
 ```
 
