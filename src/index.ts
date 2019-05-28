@@ -2,7 +2,7 @@ const version = "0414";
 
 
 import {
-  JupyterLab, JupyterLabPlugin, ILayoutRestorer,
+  JupyterFrontEnd, JupyterFrontEndPlugin, ILayoutRestorer,
 } from '@jupyterlab/application';
 
 import { CredentialsPanel } from './CredentialsPanel'
@@ -15,11 +15,11 @@ import '../style/index.css';
 const CAPTION = 'Credential Store'
 
 
-const plugin: JupyterLabPlugin<void> = {
+const plugin: JupyterFrontEndPlugin<void> = {
     id: 'credentialstore:plugin',
     requires: [ILayoutRestorer], 
     autoStart: true,
-    activate: (app: JupyterLab,
+    activate: (app: JupyterFrontEnd,
                restorer: ILayoutRestorer) => {
         
         //console.log('JupyterLab extension CredentialStore is activated!');
@@ -35,7 +35,7 @@ const plugin: JupyterLabPlugin<void> = {
         restorer.add(panel, 'credentialstore');
         panel.title.iconClass = 'jp-CredentialIcon jp-SideBar-tabIcon';
         panel.title.caption = CAPTION;
-        shell.addToLeftArea(panel, { rank: 1000 });
+        shell.add(panel,'left', { rank: 1000 });
         
         
         
