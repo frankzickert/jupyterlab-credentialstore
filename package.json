@@ -1,6 +1,6 @@
 {
-  "name": "@lean-data-science/credentialstore",
-  "version": "0.1.0",
+  "name": "@lsstsqre/jupyterlab_credentialstore",
+  "version": "0.1.1alpha.0",
   "description": "A secure credential store for JupyterLab",
   "keywords": [
     "jupyter",
@@ -11,7 +11,7 @@
   ],
   "homepage": "https://lean-data-science.com",
   "bugs": {
-    "email" : "frank.zickert@lean-data-science.awsapps.com"
+    "email": "frank.zickert@lean-data-science.awsapps.com"
   },
   "license": "BSD-3-Clause",
   "author": "Dr. Frank Zickert",
@@ -23,7 +23,7 @@
   "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lean-data-science/jupyterlab-credentialstore.git"
+    "url": "https://github.com/lsst-sqre/jupyterlab-credentialstore.git"
   },
   "scripts": {
     "build": "tsc",
@@ -32,18 +32,18 @@
     "prepare": "npm run clean && npm run build"
   },
   "dependencies": {
-    "@jupyterlab/application": "^0.18.6",
-    "@jupyterlab/apputils": "^0.18.4",
-    "@jupyterlab/codemirror": "^0.18.4",
-    "@jupyterlab/completer": "^0.18.4",
-    "@jupyterlab/coreutils": "^2.1.4",
-    "@jupyterlab/docregistry": "^0.18.4",
-    "@jupyterlab/filebrowser": "^0.18.6",
-    "@jupyterlab/launcher": "^0.18.4",
-    "@jupyterlab/mainmenu": "^0.7.4",
-    "@jupyterlab/notebook": "^0.18.5",
-    "@jupyterlab/rendermime": "^0.18.4",
-    "@jupyterlab/rendermime-interfaces": "^1.1.7",
+    "@jupyterlab/application": "^1.0.0-alpha.6",
+    "@jupyterlab/apputils": "^1.0.0-alpha.6",
+    "@jupyterlab/codemirror": "^1.0.0-alpha.6",
+    "@jupyterlab/completer": "^1.0.0-alpha.6",
+    "@jupyterlab/coreutils": "^3.0.0-alpha.6",
+    "@jupyterlab/docregistry": "^1.0.0-alpha.6",
+    "@jupyterlab/filebrowser": "^1.0.0-alpha.6",
+    "@jupyterlab/launcher": "^1.0.0-alpha.6",
+    "@jupyterlab/mainmenu": "^1.0.0-alpha.6",
+    "@jupyterlab/notebook": "^1.0.0-alpha.7",
+    "@jupyterlab/rendermime": "^1.0.0-alpha.6",
+    "@jupyterlab/rendermime-interfaces": "^1.3.0-alpha.6",
     "@phosphor/algorithm": "^1.1.2",
     "@phosphor/commands": "^1.6.1",
     "@phosphor/coreutils": "^1.3.0",
@@ -60,7 +60,7 @@
   },
   "devDependencies": {
     "rimraf": "^2.6.1",
-    "typescript": "~2.9.2"
+    "typescript": "~3.4.5"
   },
   "jupyterlab": {
     "extension": true
