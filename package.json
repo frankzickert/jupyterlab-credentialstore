@@ -29,7 +29,7 @@
     "build": "tsc",
     "clean": "rimraf lib",
     "watch": "tsc -w",
-    "prepare": "npm run clean && npm run build && npm pack"
+    "prepare": "npm run clean && npm run build"
   },
   "dependencies": {
     "@jupyterlab/application": "^1.2.1",
