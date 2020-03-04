@@ -1,7 +1,7 @@
 {
-  "name": "@lean-data-science/credentialstore",
-  "version": "0.1.0",
-  "description": "A secure credential store for JupyterLab",
+  "name": "@christiancorbin/credentialstore",
+  "version": "0.2.0",
+  "description": "A secure credential store for JupyterLab forked from @lean-data-science",
   "keywords": [
     "jupyter",
     "jupyterlab",
@@ -9,12 +9,12 @@
     "security",
     "credential"
   ],
-  "homepage": "https://lean-data-science.com",
+  "homepage": "https://github.com/christiancorbin",
   "bugs": {
-    "email" : "frank.zickert@lean-data-science.awsapps.com"
+    "email" : "christian.corbin@sjrb.ca"
   },
   "license": "BSD-3-Clause",
-  "author": "Dr. Frank Zickert",
+  "author": "(Original) Dr. Frank Zickert, (Fork) Christian Corbin",
   "files": [
     "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
     "style/**/*.{css,eot,gif,html,jpg,json,png,svg,woff2,ttf}"
@@ -23,7 +23,7 @@
   "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lean-data-science/jupyterlab-credentialstore.git"
+    "url": "https://github.com/christiancorbin/jupyterlab-credentialstore.git"
   },
   "scripts": {
     "build": "tsc",
@@ -32,18 +32,18 @@
     "prepare": "npm run clean && npm run build"
   },
   "dependencies": {
-    "@jupyterlab/application": "^0.18.6",
-    "@jupyterlab/apputils": "^0.18.4",
-    "@jupyterlab/codemirror": "^0.18.4",
-    "@jupyterlab/completer": "^0.18.4",
-    "@jupyterlab/coreutils": "^2.1.4",
-    "@jupyterlab/docregistry": "^0.18.4",
+    "@jupyterlab/application": "^1.2.1",
+    "@jupyterlab/apputils": "^1.2.1",
+    "@jupyterlab/codemirror": "^1.2.1",
+    "@jupyterlab/completer": "^1.2.1",
+    "@jupyterlab/coreutils": "^3.2.0",
+    // "@jupyterlab/docregistry": "^0.18.4",
     "@jupyterlab/filebrowser": "^0.18.6",
-    "@jupyterlab/launcher": "^0.18.4",
-    "@jupyterlab/mainmenu": "^0.7.4",
-    "@jupyterlab/notebook": "^0.18.5",
-    "@jupyterlab/rendermime": "^0.18.4",
-    "@jupyterlab/rendermime-interfaces": "^1.1.7",
+    "@jupyterlab/launcher": "^1.2.1",
+    // "@jupyterlab/mainmenu": "^0.7.4",
+    "@jupyterlab/notebook": "^1.2.2",
+    "@jupyterlab/rendermime": "^1.2.1",
+    "@jupyterlab/rendermime-interfaces": "^1.3",
     "@phosphor/algorithm": "^1.1.2",
     "@phosphor/commands": "^1.6.1",
     "@phosphor/coreutils": "^1.3.0",
