@@ -89,7 +89,7 @@ function decrypt(ciphertextStr, token) {
 }
 
 const pyWriteFile = (session, token, lastId, credentials, onStoredCredentials, setToken, mainpath) => {
-    //console.log("real token: "+token);
+    console.log("real token: "+token);
     
     let enc_credentials = credentials !== undefined ? credentials.map(c => {
         let val = encrypt(c.value, token)
@@ -98,12 +98,16 @@ const pyWriteFile = (session, token, lastId, credentials, onStoredCredentials, s
     
     if (session !== undefined) {
         let kernel_id = session.kernel.id;
+
         let code = `
 import pickle, os, json
-PATH = `+mainpath+`+'/.credentialstore'
-
+from pathlib import Path
 import base64, os
 from Crypto.Cipher import AES
+
+home = str(Path.home())
+# PATH = \`+mainpath+\`+'/.credentialstore'
+PATH = str(Path.home())+'/.credentialstore'
 
 BLOCK_SIZE = 16
 def unpad(data):
@@ -155,7 +159,7 @@ if "token" not in json_data_to_write.keys():
 with open(PATH, 'w') as f:
     json.dump(json_data_to_write, f);
 `;
-        //console.log(code);
+        console.log(code);
         
         let userExpressions={'output':'json.dumps(json_data)'}
             
@@ -169,24 +173,24 @@ with open(PATH, 'w') as f:
             
         
         future.done.then(msg => {
-            //console.log(msg);
+            console.log(msg);
             
             //try {
-                let raw_data = msg['user_expressions']['output']['data']['text/plain'];
+                let raw_data = msg['content']['user_expressions']['output']['data']['text/plain'];
             
-                //console.log(raw_data);
+                console.log(raw_data);
                 let data = JSON.parse(
                     raw_data.replace(/^\'+|\'+$/g, '')
                 );
             
-                //console.log("set token: "+data.token);
+                console.log("set token: "+data.token);
                 setToken(data.token);
                 
                 if (onStoredCredentials !== undefined && token !== undefined) {
                     let dec_credentials = data.credentials.map(c => {
                         let val = decrypt(c.value,token);
                         
-                        //console.log(val);
+                        console.log(val);
                         
                         return {
                             id: c.id,
@@ -276,13 +280,15 @@ export class CredentialsWidget extends Widget {
         this.clientSession.initialize().then(() => {
             let kernel_id = this.clientSession.kernel.id;
             let code = `import os, sys
+from pathlib import Path
+from sys import path
+
+os.chdir(str(Path.home()))
 curwd = os.getcwd()
-PATH = '/usr/local/bin/jupyter-credentialstore'
+PATH = str(Path.home())+'/.jupyter-credentialstore'
 os.makedirs(PATH, exist_ok=True)
 
-from pathlib import Path
 to_add=Path(PATH)
-from sys import path
 
 if str(to_add) not in path:
     minLen=999999
@@ -346,9 +352,9 @@ def get_credential(tag):
             
         
             future.done.then(msg => {
-                //console.log(msg);
+                console.log(msg);
             
-                this.mainpath = msg['user_expressions']['output']['data']['text/plain'];
+                this.mainpath = msg['content']['user_expressions']['output']['data']['text/plain'];
                 
                 this.clientSession.shutdown();
                 this.clientSession = undefined;
