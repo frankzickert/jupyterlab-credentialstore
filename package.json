@@ -1,5 +1,5 @@
 {
-  "name": "@ccorbin/credentialstore",
+  "name": "@lean-data-science/credentialstore",
   "version": "1.0.5",
   "description": "A secure credential store for JupyterLab forked from @lean-data-science",
   "keywords": [
@@ -9,12 +9,12 @@
     "security",
     "credential"
   ],
-  "homepage": "https://github.com/christiancorbin",
+  "homepage": "https://lean-data-science.com",
   "bugs": {
-    "email" : "christian.corbin@sjrb.ca"
+    "email" : "frank.zickert@lean-data-science.awsapps.com"
   },
   "license": "BSD-3-Clause",
-  "author": "(Original) Dr. Frank Zickert, (Fork) Christian Corbin",
+  "author": "(Original) Dr. Frank Zickert, (Updates to JupyterLab 1.2.5) Christian Corbin",
   "files": [
     "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
     "style/**/*.{css,eot,gif,html,jpg,json,png,svg,woff2,ttf}"
@@ -23,7 +23,7 @@
   "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/christiancorbin/jupyterlab-credentialstore.git"
+    "url": "https://github.com/frankzickert/jupyterlab-credentialstore.git"
   },
   "scripts": {
     "build": "tsc",
