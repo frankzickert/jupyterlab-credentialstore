@@ -147,7 +147,7 @@ const CredentialsList: React.SFC<Props> = (props) => {
      
 }
 
-function mapStateToProps(state: any, props?: Props): StateProps {
+function mapStateToProps(state: any, props: Props): StateProps {
     return {
         credentials: getCredentials(state),
         lastId: getLastId(state),

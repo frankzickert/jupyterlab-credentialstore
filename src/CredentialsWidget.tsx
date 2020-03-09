@@ -159,7 +159,7 @@ with open(PATH, 'w') as f:
         
         let userExpressions={'output':'json.dumps(json_data)'}
             
-        let content: KernelMessage.IExecuteRequest = {
+        let content: KernelMessage.IExecuteRequestMsg['content'] = {
             code: code,
             stop_on_error: true,
             user_expressions: userExpressions
@@ -172,7 +172,7 @@ with open(PATH, 'w') as f:
             //console.log(msg);
             
             //try {
-                let raw_data = msg['content']['user_expressions']['output']['data']['text/plain'];
+                let raw_data = msg['user_expressions']['output']['data']['text/plain'];
             
                 //console.log(raw_data);
                 let data = JSON.parse(
@@ -336,7 +336,7 @@ def get_credential(tag):
             
             let userExpressions={'output':'os.getcwd()'}
             
-            let content: KernelMessage.IExecuteRequest = {
+            let content: KernelMessage.IExecuteRequestMsg['content'] = {
                 code: code,
                 stop_on_error: true,
                 user_expressions: userExpressions
@@ -348,7 +348,7 @@ def get_credential(tag):
             future.done.then(msg => {
                 //console.log(msg);
             
-                this.mainpath = msg['content']['user_expressions']['output']['data']['text/plain'];
+                this.mainpath = msg['user_expressions']['output']['data']['text/plain'];
                 
                 this.clientSession.shutdown();
                 this.clientSession = undefined;
@@ -477,7 +477,7 @@ def get_credential(tag):
             let kernel_id = this.clientSession.kernel.id;
             let code = `exec("%s = None" % ("`+tag+`"))`;
             //console.log(code);
-            let content: KernelMessage.IExecuteRequest = {
+            let content: KernelMessage.IExecuteRequestMsg['content'] = {
                 code: code,
                 stop_on_error: true
             };

@@ -1,5 +1,5 @@
 {
-  "name": "@christiancorbin/credentialstore",
+  "name": "@ccorbin/credentialstore",
   "version": "1.0.0",
   "description": "A secure credential store for JupyterLab forked from @lean-data-science",
   "keywords": [
