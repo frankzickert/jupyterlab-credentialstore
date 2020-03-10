@@ -155,7 +155,7 @@ function mapStateToProps(state: any, props: Props): StateProps {
     }
 }
  
-function mapDispatchToProps(dispatch: Redux.Dispatch<any>, props: Props): DispatchProps {
+function mapDispatchToProps(dispatch: Redux.Dispatch<any>, props?: Props): DispatchProps {
     return {
         addCredential: () => {
             dispatch(addCredential());
