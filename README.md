@@ -27,6 +27,8 @@ kc.get_credential("my_secret")
 
 Install the **JupyterLab Credential Store**:
 
+*NOTE - the below @lean-data-science image is not compatible with recent Jupyter versions*
+
 ```bash
 pip install pycrypto
 apt-get install nodejs -y
